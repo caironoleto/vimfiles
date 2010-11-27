@@ -64,11 +64,14 @@ set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
 "set statusline+=%#warningmsg#
 "set statusline+=%{&ff!='unix'?'['.&ff.']':''}
 "set statusline+=%*
+"
+set encoding=utf-8
+set termencoding=utf-8
 
 "Display a warning if file encoding isnt utf-8
-"set statusline+=%#warningmsg#
-"set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
 
 "set statusline+=%h      "help file flag
 "set statusline+=%y      "filetype
@@ -264,35 +267,17 @@ if has("gui_running")
     colorscheme railscasts
     set guitablabel=%M%t
     set lines=40
-    set columns=115
-
-    if has("gui_gnome")
-        set term=gnome-256color
-        colorscheme ir_dark
-        set guifont=Inconsolata\ Medium\ 12
-    endif
+    set columns=215
 
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo:h14
+        set guifont=Monaco:h12
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
         "map <D-t> :CommandT<CR>
         " make Mac's Option key behave as the Meta key
         set invmmta
-        try
-          set transparency=5
-        catch
-        endtry
     endif
-
-    if has("gui_win32") || has("gui_win32s")
-        set guifont=Consolas:h12
-        set enc=utf-8
-    endif
-else
-    "dont load csapprox if there is no gui support - silences an annoying warning
-    let g:CSApprox_loaded = 1
 endif
 
 " PeepOpen uses <Leader>p as well so you will need to redefine it so something
