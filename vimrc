@@ -40,6 +40,11 @@ nmap <D-4> g$
 nmap <D-6> g^
 nmap <D-0> g^
 
+"alias
+cnoreabbrev W w
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+
 "add some line space for easy reading
 set linespace=4
 
