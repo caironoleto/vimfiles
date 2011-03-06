@@ -1,6 +1,3 @@
-"necessary on some Linux distros for pathogen to properly load bundles
-filetype off
-
 "load pathogen managed plugins
 call pathogen#runtime_append_all_bundles()
 
@@ -12,7 +9,7 @@ set nocompatible
 set backspace=indent,eol,start
 
 "store lots of :cmdline history
-set history=1000
+set history=100
 
 set showcmd     "show incomplete cmds down the bottom
 set showmode    "show current mode down the bottom
@@ -56,6 +53,9 @@ nmap <Down> gj
 nmap <Up> gk
 set fo=l
 
+set encoding=utf-8
+set termencoding=utf-8
+
 "statusline setup
 set statusline=%f       "tail of the filename
 
@@ -70,41 +70,11 @@ set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''}
 "set statusline+=%{&ff!='unix'?'['.&ff.']':''}
 "set statusline+=%*
 "
-set encoding=utf-8
-set termencoding=utf-8
-
 "Display a warning if file encoding isnt utf-8
 set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 set statusline+=%*
-
-"set statusline+=%h      "help file flag
-"set statusline+=%y      "filetype
-"set statusline+=%r      "read only flag
-"set statusline+=%m      "modified flag
-
-"display a warning if &et is wrong, or we have mixed-indenting
-"set statusline+=%#error#
-"set statusline+=%{StatuslineTabWarning()}
-"set statusline+=%*
-"
-"set statusline+=%{StatuslineTrailingSpaceWarning()}
-"
-"set statusline+=%{StatuslineLongLineWarning()}
-"
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-"display a warning if &paste is set
-"set statusline+=%#error#
-"set statusline+=%{&paste?'[paste]':''}
-"set statusline+=%*
-
 set statusline+=%=      "left/right separator
-
-"set statusline+=%{StatuslineCurrentHighlight()}\ \ "current highlight
-
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
@@ -128,7 +98,6 @@ function! StatuslineTrailingSpaceWarning()
     endif
     return b:statusline_trailing_space_warning
 endfunction
-
 
 "return the syntax highlight group under the cursor ''
 function! StatuslineCurrentHighlight()
@@ -284,10 +253,6 @@ if has("gui_running")
         set invmmta
     endif
 endif
-
-" PeepOpen uses <Leader>p as well so you will need to redefine it so something
-" else in your ~/.vimrc file, such as:
-" nmap <silent> <Leader>q <Plug>PeepOpen
 
 silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :call FindInNERDTree()<CR> 
