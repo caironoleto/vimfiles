@@ -238,9 +238,9 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme railscasts
+    "colorscheme astronat
     set guitablabel=%M%t
-    set lines=40
+    set lines=60
     set columns=215
 
     if has("gui_mac") || has("gui_macvim")
