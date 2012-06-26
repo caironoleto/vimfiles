@@ -41,6 +41,7 @@ nmap <D-0> g^
 cnoreabbrev W w
 cnoreabbrev Wq wq
 cnoreabbrev WQ wq
+cnoreabbrev tb tabnew
 
 "add some line space for easy reading
 set linespace=4
@@ -237,6 +238,7 @@ let g:CommandTMatchWindowAtTop=1
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
+    set background=light
 
     "colorscheme astronat
     set guitablabel=%M%t
@@ -251,6 +253,9 @@ if has("gui_running")
         "map <D-t> :CommandT<CR>
         " make Mac's Option key behave as the Meta key
         set invmmta
+
+        "always show tab bar
+        set showtabline=2
     endif
 endif
 
