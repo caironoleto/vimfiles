@@ -246,7 +246,7 @@ if has("gui_running")
     set columns=215
 
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Monaco:h12
+        set guifont=Menlo:h12
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
