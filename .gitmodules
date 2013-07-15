@@ -52,3 +52,6 @@
 [submodule "/Users/caironoleto/.vim/bundle/vim-colors-solarized"]
 	path = /Users/caironoleto/.vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
